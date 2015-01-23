@@ -9,11 +9,12 @@ addresses the difficulties encountered by developers of Trusted
 Applications (TAs) for Trusted Execution Environments (TEEs). 
 
 This user study consists of three steps. First we would like you to
-fill out a pre study questionnare, which purpose is to collect
-participants background information. After pre study questionnare there will be a
+fill out a pre study questionnare, the purpose of which is to collect
+participants background information. After the pre study questionnare there will be a
 little exercise. You will be asked to use Open-TEE and after that we
 would like to you fill out a post study questionnare, which will be
-collecting information about Open-TEE.
+collecting information aboutyour experience in using Open-TEE in this
+particular exercise.
 
 This study result will be used for Open-TEE development and therefore
 we would appreciate your feedback.
@@ -29,7 +30,7 @@ experience, he/she is still welcome to participate.
 #### Pre requirements
 Before starting out with actual user study, make sure that you have
 Open-TEE deployed. If you do not have this done, please see 
-[tutorial page](/tutorial).
+[tutorial page](/tutorial/).
 
 #### Contact/help
 In case of questions about the user study, go see the contacts page.
@@ -98,9 +99,8 @@ As said before, the bugs are located in TA. The TA source file is located
 ~~~
 
 It is called "usr_study_ta". For tracking down the bugs, you
-can use your own favorite method. For example, you could open up the
-source file and review it or you could use GDB or just rely on
-printf-method. See [tutorial](/tutorial/) for more information.
+can use your own favorite method. For example, you could use GDB.
+See [tutorial](/tutorial/) for more information.
 
 If you have found the bugs then fix the bugs in TA source file. After
 editing recompile TA. 
@@ -148,7 +148,7 @@ still do step 3.
 ### User study: step 4
 Do not forget to return the two questionnares!
 
-### Prologue
+### Epiogue
 After completing these above mentioned steps, your part has been
 successfully completed. We thank you for participating and taking the
 time. If during completing the user study or after finishing it, you
