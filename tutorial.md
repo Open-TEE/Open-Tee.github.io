@@ -38,23 +38,25 @@ Fetch the `repo` repository management tool:
 
 Create a directory where to checkout the Open-TEE repositories:
 
-    $ mkdir Open-Tee
-    $ cd Open-Tee
+    $ mkdir Open-TEE
+    $ cd Open-TEE
 
 Have `repo` fetch the manifest for the Open-TEE project:
 
     $ ~/bin/repo init -u https://github.com/Open-TEE/manifest.git
     $ ~/bin/repo sync -j10
 
-Open the configuration file with your preferred editor and add sample confiuration given below:
+Open the configuration file with your preferred editor: 
 
     $ sudo $EDITOR /etc/opentee.conf
 
-> [PATHS]  
-> ta_dir_path = <CHANGE PATH>/Open-TEE/gcc-debug/TAs  
-> core_lib_path = <CHANGE PATH>/Open-TEE/gcc-debug  
-> subprocess_manager = libManagerApi.so  
-> subprocess_launcher = libLauncherApi.so  
+Add the sample confiuration given below to the configuration file:
+
+    [PATHS]
+    ta_dir_path = <CHANGE PATH>/Open-TEE/gcc-debug/TAs
+    core_lib_path = <CHANGE PATH>/Open-TEE/gcc-debug
+    subprocess_manager = libManagerApi.so
+    subprocess_launcher = libLauncherApi.so
 
 Replace `<CHANGE PATH>` with the path to the parent directory of the Open-TEE directory you created earlier.
 
