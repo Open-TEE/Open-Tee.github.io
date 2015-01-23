@@ -100,7 +100,7 @@ TAs/usr_study_ta/
 
 It is called "usr_study_ta". For tracking down the bugs, you
 can use your own favorite method. For example, you could use GDB.
-See [tutorial](/tutorial/) for more information.
+See [debugApps](/debugApps/) for more information.
 
 If you have found the bugs then fix the bugs in TA source file. After
 editing recompile TA. 
