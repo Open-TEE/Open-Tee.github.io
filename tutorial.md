@@ -50,11 +50,11 @@ Open the configuration file with your preferred editor and add sample confiurati
 
     $ sudo $EDITOR /etc/opentee.conf
 
-> [PATHS]
-> ta_dir_path = <CHANGE PATH>/Open-TEE/gcc-debug/TAs
-> core_lib_path = <CHANGE PATH>/Open-TEE/gcc-debug
-> subprocess_manager = libManagerApi.so
-> subprocess_launcher = libLauncherApi.so
+> [PATHS]  
+> ta_dir_path = <CHANGE PATH>/Open-TEE/gcc-debug/TAs  
+> core_lib_path = <CHANGE PATH>/Open-TEE/gcc-debug  
+> subprocess_manager = libManagerApi.so  
+> subprocess_launcher = libLauncherApi.so  
 
 Replace `<CHANGE PATH>` with the path to the parent directory of the Open-TEE directory you created earlier.
 
@@ -70,9 +70,9 @@ Verify that Open-TEE is running with `ps`:
 
 You should see output similar to the example below:
 
-> gcc-debug$ ps waux |grep tee
-> brian     5738  0.0  0.0  97176   852 ?        Sl   10:40   0:00 tee_manager       
-> brian     5739  0.0  0.0  25216  1144 ?        S    10:40   0:00 tee_launcher 
+> gcc-debug$ ps waux |grep tee  
+> brian     5738  0.0  0.0  97176   852 ?        Sl   10:40   0:00 tee_manager  
+> brian     5739  0.0  0.0  25216  1144 ?        S    10:40   0:00 tee_launcher  
 
 Take not of the PID of the `tee_launcher` process and attach `gdb` to it:
 
@@ -87,4 +87,16 @@ In second terminal run the client application:
 
 	$ cd Open-TEE/gcc-debug
     $ ./conn_test_app
+
+You should now expect to see output similar to the following:
+
+> gcc-debug$ ./conn_test_app  
+> START: conn test app  
+> Initializing context: initiliazed  
+> Openning session: opened  
+> yyyyyyyyyyyyyyyyyyyyxxxxx  
+> Invoking command: invoked  
+> Closing session: Closed  
+> Finalizing ctx: Finalized  
+> END: conn test app
 
