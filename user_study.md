@@ -66,16 +66,16 @@ Now we assume that you have set up the Open-TEE environment. To
 execute the first test run, follow the following steps: 
 
 1. If not running already, launch Open-TEE.
-2. Navigate into Open-TEE directory. User study binary is located:
+2. Navigate into Open-TEE directory. The user study source code is in 2 partd, the Client Application (CA) and the Trusted Application (TA) located:
 
 ~~~
-/CAs/usr_study_ca/
+CAs/usr_study_ca/
+TAs/usr_study_ta/
 ~~~
 
-Binary name is "usr_study_ca". It is important that you have not modified this binary. 
+The test binary is called "usr_study_ca" and located under gcc-debug/ directory. It is important that you have not modified this binary. 
 
-3. Run user study binary. You will be getting the following print out
-onto console: 
+3. Run user study binary. You will see the following print out onto the console: 
 
 ~~~
 START: usr study app
@@ -95,7 +95,7 @@ proceed to bug hunting.
 As said before, the bugs are located in TA. The TA source file is located 
 
 ~~~
-/TAs/usr_study_ta/
+TAs/usr_study_ta/
 ~~~
 
 It is called "usr_study_ta". For tracking down the bugs, you
