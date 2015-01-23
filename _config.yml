@@ -2,9 +2,18 @@
 title: Open-TEE
 #email: your-email@domain.com
 description: > # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  The goal of the Open-TEE open source project is to implement a "virtual TEE" compliant with the recent <a href="http://globalplatform.org/specificationsdevice.asp"> Global Platform TEE specifications </a>.
+
+Our primary motivation for the virtual TEE is to use it as a tool for developers of Trusted Applications and researchers interested in using TEEs or building new protocols and systems on top of it. Although hardware-based TEEs are ubiquitous in smartphones and tablets ordinary developers and researchers do not have access to it. While the emerging Global Platform specifications may change this situation in the future, a fully functional virtual TEE can help developers and researchers right away.
+
+We intend Trusted Applications developed using our virtual TEE can be compiled and run for any target that complies with the specifications.
+
+The Open-TEE project is being led by the <a href="http://se-sy.org">Secure Systems group</a> as part of our activities at the <a href="http://www.icri-sc.org/"> Intel Collaborative Research Institute for Secure Computing </a>
+
+
+All activities of the project are
+public and all results are in the public domain. We welcome anyone interested to join us in contributing to the project.
+
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://open-tee.github.io/" # the base hostname & protocol for your site
 github_username:  Open-TEE
