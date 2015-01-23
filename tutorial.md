@@ -78,7 +78,18 @@ You should see output similar to the example below:
 
 Take not of the PID of the `tee_launcher` process and attach `gdb` to it:
 
-    $ gdb  TEE_Core_Process <PID of tee_launcher>
+    $ gdb TEE_Core_Process <PID of tee_launcher>
+
+If you get the following error:
+
+> Could not attach to process.  If your uid matches the uid of the target  
+> process, check the setting of /proc/sys/kernel/yama/ptrace_scope, or try  
+> again as the root user.  For more details, see /etc/sysctl.d/10-ptrace.conf  
+> ptrace: Operation not permitted.  
+
+Run the following command and invoke `gdb` again as above:
+
+    $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope 
 
 In `gdb`, enter the following commands: 
 
