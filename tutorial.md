@@ -53,12 +53,14 @@ Open the configuration file with your preferred editor:
 Add the sample confiuration given below to the configuration file:
 
     [PATHS]
-    ta_dir_path = <CHANGE PATH>/Open-TEE/gcc-debug/TAs
-    core_lib_path = <CHANGE PATH>/Open-TEE/gcc-debug
+    ta_dir_path = <PATHNAME>/Open-TEE/gcc-debug/TAs
+    core_lib_path = <PATHNAME>/Open-TEE/gcc-debug
     subprocess_manager = libManagerApi.so
     subprocess_launcher = libLauncherApi.so
 
-Replace `<CHANGE PATH>` with the path to the parent directory of the Open-TEE directory you created earlier.
+where `<PATHNAME>` with the absolute path to the parent directory of the
+Open-TEE directory you created earlier. The pathname must **not** include
+special variables such as `~` or `$HOME`.
 
 Finally, build Open-TEE and launch the `TEE_Core_Process`:
 
