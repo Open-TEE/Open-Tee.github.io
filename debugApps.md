@@ -62,7 +62,7 @@ $ gdb attach [tee_launcher PID]
 Now we have to set the GDB to follow the child:
 
 ~~~
-set set follow-fork-mode child
+set follow-fork-mode child
 ~~~
 
 Continue GDB (hit "c" and enter) and now it is waiting for your TA. 
