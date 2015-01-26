@@ -78,7 +78,29 @@ You should see output similar to the example below:
 > brian     5738  0.0  0.0  97176   852 ?        Sl   10:40   0:00 tee_manager  
 > brian     5739  0.0  0.0  25216  1144 ?        S    10:40   0:00 tee_launcher  
 
-Run the client application:
+Take not of the PID of the `tee_launcher` process and attach `gdb` to it:
+
+    $ gdb TEE_Core_Process <PID of tee_launcher>
+
+If you get the following error:
+
+> Could not attach to process.  If your uid matches the uid of the target  
+> process, check the setting of /proc/sys/kernel/yama/ptrace_scope, or try  
+> again as the root user.  For more details, see /etc/sysctl.d/10-ptrace.conf  
+> ptrace: Operation not permitted.  
+
+Run the following command and invoke `gdb` again as above:
+
+    $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope 
+
+In the `gdb` prompt, invoke the following commands in order to set `gdb` to
+follow children processes across forks in order to drop into the TA process
+itself and resume execution: 
+
+    set follow-fork-mode child
+    c
+
+In second terminal run the client application:
 
 	$ cd Open-TEE/gcc-debug
     $ ./conn_test_app
@@ -95,5 +117,5 @@ You should now expect to see output similar to the following:
 > Finalizing ctx: Finalized  
 > END: conn test app
 
-For instructions on how to debug Open-TEE TAs using `gdb`, see the
-[DebugApps](/debugApps/).
+For additional techniques on how to debug Open-TEE TAs using `gdb`, see the
+[DebugApps](/debugApps/) page.
