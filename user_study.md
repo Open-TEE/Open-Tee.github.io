@@ -9,31 +9,31 @@ addresses the difficulties encountered by developers of Trusted
 Applications (TAs) for Trusted Execution Environments (TEEs). 
 
 This user study consists of three steps. First we would like you to
-fill out a pre study questionnare, the purpose of which is to collect
-participants background information. After the pre study questionnare there will be a
-little exercise. You will be asked to use Open-TEE and after that we
-would like to you fill out a post study questionnare, which will be
-collecting information aboutyour experience in using Open-TEE in this
-particular exercise.
+fill out a pre-study questionnare, the purpose of which is to collect
+background information on the participants. After the pre-study
+questionnare there will be a little exercise. You will be asked to use
+Open-TEE and after that we would like to you fill out a post-study
+questionnare, which will be collecting information about your
+experience in using Open-TEE in this particular exercise.
 
 This study result will be used for Open-TEE development and therefore
 we would appreciate your feedback.
 
 #### Participants
 This user study is mainly aimed towards people who are aquainted with
-TEE and have developed TAs. The user study itself does not need any
+TEEs and have developed TAs. The user study itself does not need any
 special skills or knowledge beforehand, because we have composed a
 tutorial and user guide for throughout the study. However if anyone is
 interested in this subject and does not have any pre-knowledge or
 experience, he/she is still welcome to participate.  
 
-#### Pre requirements
-Before starting out with actual user study, make sure that you have
+#### Pre-requirements
+Before starting out with actual user-study, make sure that you have
 Open-TEE deployed. If you do not have this done, please see 
 [tutorial page](/tutorial/).
 
 #### Contact/help
-In case of questions about the user study, go see the contacts page.
+In case of questions about the user study, please see the contacts page.
 In case of technical problems, also feel free to 
 [contact](/contact/) us. 
 
@@ -43,7 +43,6 @@ out the pre-study questionnare. Fill out the questionnare as best as
 you can following the instructions given at the questionnare. Please
 follow the steps according to their order and do not skip any of the
 steps.
-
 
 ### User study: step 2
 You will be using Open-TEE for debugging Trusted Application. The
@@ -148,9 +147,10 @@ still do step 3.
 ### User study: step 4
 Do not forget to return the two questionnares!
 
-### Epiogue
-After completing these above mentioned steps, your part has been
-successfully completed. We thank you for participating and taking the
-time. If during completing the user study or after finishing it, you
-developed any questions about the user study or OpenTEE, please do not
-hesitate to contact us. Extra feedback would also be welcome.   
+### Epilogue
+After completing the steps mentioned above, your part has been
+successfully completed. We thank you for taking the time to
+participate in the user stury. If during the user study or after
+finishing it, you developed any questions about the user study or
+Open-TEE, please do not hesitate to contact us. Any additional
+feedback would also be welcome.   
