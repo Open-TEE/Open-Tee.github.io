@@ -31,7 +31,7 @@ Now configure `qbs`:
 
 Fetch the `repo` repository management tool:
 
-	$ mkdir -p ~/bin
+    $ mkdir -p ~/bin
     $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
     $ chmod +x ~/bin/repo
 
@@ -66,7 +66,7 @@ Finally, build Open-TEE and launch the `TEE_Core_Process`:
 
     $ qbs debug
     $ cd gcc-debug
-    ./TEE_Core_Process
+    ./opentee-engine
 
 Verify that Open-TEE is running with `ps`:  
 
@@ -80,7 +80,7 @@ You should see output similar to the example below:
 
 Take not of the PID of the `tee_launcher` process and attach `gdb` to it:
 
-    $ gdb TEE_Core_Process <PID of tee_launcher>
+    $ gdb opentee-engine <PID of tee_launcher>
 
 If you get the following error:
 
@@ -102,8 +102,8 @@ itself and resume execution:
 
 In second terminal run the client application:
 
-	$ cd Open-TEE/gcc-debug
-    $ ./conn_test_app
+    $ cd Open-TEE/gcc-debug
+    $ ./conn_test_app
 
 You should now expect to see output similar to the following:
 
