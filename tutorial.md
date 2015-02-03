@@ -62,7 +62,7 @@ where `<PATHNAME>` with the absolute path to the parent directory of the
 Open-TEE directory you created earlier. The pathname must **not** include
 special variables such as `~` or `$HOME`.
 
-Finally, build Open-TEE and launch the `TEE_Core_Process`:
+Finally, build Open-TEE and launch the `opentee-engine`:
 
     $ qbs debug
     $ cd gcc-debug
