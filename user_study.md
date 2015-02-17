@@ -35,7 +35,12 @@ Open-TEE deployed. If you do not have this done, please see
 #### Contact/help
 In case of questions about the user study, please see the contacts page.
 In case of technical problems, also feel free to 
-[contact](/contact/) us. 
+[contact](/contact/) us.
+
+#### Documents
+[Pre study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/tree/master/documents)
+
+[Post study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/tree/master/documents)
 
 ### User study: step 1
 At the first phase of the user study, please take some time to fill
@@ -153,4 +158,4 @@ successfully completed. We thank you for taking the time to
 participate in the user stury. If during the user study or after
 finishing it, you developed any questions about the user study or
 Open-TEE, please do not hesitate to contact us. Any additional
-feedback would also be welcome.   
+feedback would also be welcome.
