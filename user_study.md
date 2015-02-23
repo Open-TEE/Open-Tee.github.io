@@ -12,30 +12,30 @@ This user study consists of three steps. First we would like you to
 fill out a pre-study questionnare, the purpose of which is to collect
 background information on the participants. After the pre-study
 questionnare there will be a little exercise. You will be asked to use
-Open-TEE and after that we would like to you fill out a post-study
-questionnare, which will be collecting information about your
+Open-TEE to complete the exercise, and afterwards fill out a post-study
+questionnare, the purpose of which is to collect information about your
 experience in using Open-TEE in this particular exercise.
 
-This study result will be used for Open-TEE development and therefore
-we would appreciate your feedback.
+The results of this study will be used to further Open-TEE development
+and therefore we would appreciate your feedback.
 
 #### Participants
 This user study is mainly aimed towards people who are aquainted with
 TEEs and have developed TAs. The user study itself does not need any
-special skills or knowledge beforehand, because we have composed a
-tutorial and user guide for throughout the study. However if anyone is
-interested in this subject and does not have any pre-knowledge or
-experience, he/she is still welcome to participate.  
+special beforehand skills or knowledge. We have composed a tutorial
+and user guide for Open-TEE you can refer to throughout the study.
+However, anyone interested in this subject is still welcome to
+participate even if he/she does not have TA development experience.
 
 #### Pre-requirements
-Before starting out with actual user-study, make sure that you have
-Open-TEE deployed. If you do not have this done, please see 
-[tutorial page](/tutorial/).
+Before beginning the actual user-study, plase make sure that you have
+Open-TEE deployed. For instructions on how to build and install
+Open-TEE please see the [tutorial page](/tutorial/).
 
 #### Contact/help
-In case of questions about the user study, please see the contacts page.
-In case of technical problems, also feel free to 
-[contact](/contact/) us.
+In case of questions about the user study, please see the
+[contacts page](/contact/). In case of technical problems,
+also feel free to contact us.
 
 #### Documents
 [Pre study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/pre-study-questionnaire.pdf)
@@ -43,43 +43,46 @@ In case of technical problems, also feel free to
 [Post study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/post-study-questionnaire.pdf)
 
 ### User study: step 1
-At the first phase of the user study, please take some time to fill
+In the first phase of the user study, please take some time to fill
 out the pre-study questionnare. Fill out the questionnare as best as
-you can following the instructions given at the questionnare. Please
-follow the steps according to their order and do not skip any of the
-steps.
+you can following the instructions in the beginning of the form.
+Please complete the steps in order and do not skip any of the steps.
 
 ### User study: step 2
-You will be using Open-TEE for debugging Trusted Application. The
+You will be using Open-TEE for debugging a Trusted Application. The
 debugging is needed because we have purposely injected some bugs into
-this user study TA and your task is to fix it. You will be fixing a
-"virtual wallet" type application. This application is implemented for
-this user study and it is only serving the purpose of this user study.
-We must emphasize the artificial nature of this application and that
-you must not implement it to real life.
+this user study TA, and your task is to fix it. You will be working
+with a "virtual wallet" type application. This application has been
+implemented only for use in this user study, and should not be used as
+a reference in implementing TAs for production use.
 
 #### Bugs
-You will be focusing only to TA application and the bugs exist only in
-this application. Open-TEE and corresponding Client Application do not
-need attention because they are implemented correctly. The injected
-bugs are not logical type and all the algorithms work as they are
-supposed to and returnig correct values.
+In this exercise, you will be focusing only on the TA application.
+Bugs have been introduced only into this application. Open-TEE and
+corresponding Client Application do not need attention, in this
+exercise, and therefor you can assume that they are implemented
+correctly. The bugs introduced to the TA are not logical in nature and
+all algorithms work as they are supposed to and are returning correct
+values.
 
 #### First test run with bug
 Now we assume that you have set up the Open-TEE environment. To
-execute the first test run, follow the following steps: 
+execute the first test run, follow the steps below: 
 
-1. If not running already, launch Open-TEE.
-2. Navigate into Open-TEE directory. The user study source code is in 2 partd, the Client Application (CA) and the Trusted Application (TA) located:
+1. If not running already, launch Open-TEE as per the instructions on
+   the [tutorial page](/tutorial/).
 
-~~~
-CAs/usr_study_ca/
-TAs/usr_study_ta/
-~~~
+2. Navigate into the Open-TEE directory. The user study source code is
+   in two parts, the Client Application (CA) and the Trusted Application
+   (TA) located at `CAs/usr_study_ca/` and  `TAs/usr_study_ta/` 
+   respectively.
 
-The test binary is called "usr_study_ca" and located under gcc-debug/ directory. It is important that you have not modified this binary. 
+   The test binary is called "usr_study_ca" and located under the
+   `gcc-debug/` directory. It is important that you have not modified
+   this binary yet. 
 
-3. Run user study binary. You will see the following print out onto the console: 
+3. Run user study binary. You will see the following print out onto
+   the console: 
 
 ~~~
 START: usr study app
@@ -92,31 +95,28 @@ Run summary: FAILED
 END: usr study app
 ~~~
 
-If you are seeing this print out, then all is well. Now you can
-proceed to bug hunting. 
+If you see this print out, then all is well. Now you can proceed debug
+the TA. 
 
 #### Debugging the TA 
-As said before, the bugs are located in TA. The TA source file is located 
+As mentioned previously, all the bugs introduced are located in TA
+code. The TA source file is located  at `TAs/usr_study_ta/`
 
-~~~
-TAs/usr_study_ta/
-~~~
-
-It is called "usr_study_ta". For tracking down the bugs, you
+The TA is called "usr_study_ta". For tracking down the bugs, you
 can use your own favorite method. For example, you could use GDB.
 See [debugApps](/debugApps/) for more information.
 
-If you have found the bugs then fix the bugs in TA source file. After
-editing recompile TA. 
+Once you have pinpointed the location of the bugs, fix them in the TA
+source file. After saving you changes, recompile the TA. 
 
 #### Re-run debugged TA
-Now you have fixed the bugs and it is time to verify if all the bugs
-have been found and fixed. Follow the following steps: 
+Once you have fixed the bugs it is time to verify if all the bugs
+have been found and fixed by following the steps below: 
 
-1. Open-TEE should now be running and do not launch it the second time. 
+1. Open-TEE should now be running. Do not launch it the second time. 
 2. Execute the corresponding Client Application. 
 3. You will be getting a print out on your console. In case you have
-found and fixed all the bugs, you will see the following print out: 
+   found and fixed all the bugs, you will see the following print out: 
 
 ~~~
 START: usr study app
@@ -135,19 +135,18 @@ Run summary: PASS
 END: usr study app
 ~~~
 
-Verify your result with comparing your print out and this print out.
-Note that at the end of the print out is a line that says if you
-passed or failed. If you failed, go back to "step 2".
+Verify your result by comparing your print out to the print out above.
+Note the line at the end of the print out indicating if the run passed
+or failed. If the run fails, go back to step 2.
 
-In case of success, this part is done and you can move to step 3. If
-you have no alternative use for Open-TEE, you can remove Open-TEE. 
+In case of success, this part is done and you can proceed to step 3.
+If you have no alternative use for Open-TEE, you can remove Open-TEE. 
 
 ### User study: step 3
 Please fill out the post study questionnare. Instructions can be once
 again found in the questionnare itself. Step 3 should be completed
-based on your previous step (2) experience of OpenTEE. If you do not 
-succeed in doing step 2 as planned, please take time and
-still do step 3. 
+based on your experience with OpenTEE in step 2. If you are unable to
+complete step 2 sucessfully, please still fill out the questionnaire. 
 
 ### User study: step 4
 Do not forget to return the two questionnares!
