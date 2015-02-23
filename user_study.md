@@ -38,9 +38,9 @@ In case of technical problems, also feel free to
 [contact](/contact/) us.
 
 #### Documents
-[Pre study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/tree/master/documents)
+[Pre study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/pre-study-questionnaire.pdf)
 
-[Post study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/tree/master/documents)
+[Post study questionnaire](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/post-study-questionnaire.pdf)
 
 ### User study: step 1
 At the first phase of the user study, please take some time to fill
