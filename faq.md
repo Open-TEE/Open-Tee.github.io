@@ -13,6 +13,8 @@ for TA development, without the need for hardware with e.g.
 interactive debugging support. Open-TEE itself runs on top of a
 conventional operating system (GNU/Linux).
 
+---
+
 _I get the following error when trying to attach GDB to `tee_launcher`
 or TA process. How can I avoid it?_
 
