@@ -104,7 +104,6 @@ code. The TA source file is located  at `TAs/usr_study_ta/`
 
 The TA is called "usr_study_ta". For tracking down the bugs, you
 can use your own favorite method. For example, you could use GDB.
-See [debugApps](/debugApps/) for more information.
 
 Once you have pinpointed the location of the bugs, fix them in the TA
 source file. After saving you changes, recompile the TA. 

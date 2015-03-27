@@ -1,8 +1,8 @@
----
-layout: page
-title: DebugApps
-permalink: /debugApps/
----
+# ---
+# layout: page
+# title: DebugApps
+# permalink: /debugApps/
+# ---
 
 This page includes useful information about how to use Open-TEE. 
 This presents a few methods on how to use Open-TEE for debugging

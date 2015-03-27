@@ -117,5 +117,3 @@ You should now expect to see output similar to the following:
 > Finalizing ctx: Finalized  
 > END: conn test app
 
-For additional techniques on how to debug Open-TEE TAs using `gdb`, see the
-[DebugApps](/debugApps/) page.
