@@ -9,18 +9,18 @@ addresses the difficulties encountered by developers of Trusted
 Applications (TAs) for Trusted Execution Environments (TEEs). 
 
 This user study consists of three steps. First we would like you to
-fill out a pre-study questionnare, the purpose of which is to collect
+fill out a pre-study questionnaire, the purpose of which is to collect
 background information on the participants. After the pre-study
-questionnare there will be a little exercise. You will be asked to use
+questionnaire there will be a little exercise. You will be asked to use
 Open-TEE to complete the exercise, and afterwards fill out a post-study
-questionnare, the purpose of which is to collect information about your
+questionnaire, the purpose of which is to collect information about your
 experience in using Open-TEE in this particular exercise.
 
 The results of this study will be used to further Open-TEE development
 and therefore we would appreciate your feedback.
 
 #### Participants
-This user study is mainly aimed towards people who are aquainted with
+This user study is mainly aimed towards people who are acquainted with
 TEEs and have developed TAs. The user study itself does not need any
 special beforehand skills or knowledge. We have composed a tutorial
 and user guide for Open-TEE you can refer to throughout the study.
@@ -28,7 +28,7 @@ However, anyone interested in this subject is still welcome to
 participate even if he/she does not have TA development experience.
 
 #### Pre-requirements
-Before beginning the actual user-study, plase make sure that you have
+Before beginning the actual user-study, please make sure that you have
 Open-TEE deployed. For instructions on how to build and install
 Open-TEE please see the [tutorial page](/tutorial/).
 
@@ -44,7 +44,7 @@ also feel free to contact us.
 
 ### User study: step 1
 In the first phase of the user study, please take some time to fill
-out the pre-study questionnare. Fill out the questionnare as best as
+out the pre-study questionnaire. Fill out the questionnaire as best as
 you can following the instructions in the beginning of the form.
 Please complete the steps in order and do not skip any of the steps.
 
@@ -142,18 +142,18 @@ In case of success, this part is done and you can proceed to step 3.
 If you have no alternative use for Open-TEE, you can remove Open-TEE. 
 
 ### User study: step 3
-Please fill out the post study questionnare. Instructions can be once
-again found in the questionnare itself. Step 3 should be completed
+Please fill out the post study questionnaire. Instructions can be once
+again found in the questionnaire itself. Step 3 should be completed
 based on your experience with OpenTEE in step 2. If you are unable to
-complete step 2 sucessfully, please still fill out the questionnaire. 
+complete step 2 successfully, please still fill out the questionnaire. 
 
 ### User study: step 4
-Do not forget to return the two questionnares!
+Do not forget to return the two questionnaires!
 
 ### Epilogue
 After completing the steps mentioned above, your part has been
 successfully completed. We thank you for taking the time to
-participate in the user stury. If during the user study or after
+participate in the user study. If during the user study or after
 finishing it, you developed any questions about the user study or
 Open-TEE, please do not hesitate to contact us. Any additional
 feedback would also be welcome.

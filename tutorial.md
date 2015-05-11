@@ -50,7 +50,7 @@ Open the configuration file with your preferred editor:
 
     $ sudo $EDITOR /etc/opentee.conf
 
-Add the sample confiuration given below to the configuration file:
+Add the sample configuration given below to the configuration file:
 
     [PATHS]
     ta_dir_path = <PATHNAME>/Open-TEE/gcc-debug/TAs
@@ -109,7 +109,7 @@ You should now expect to see output similar to the following:
 
 > gcc-debug$ ./conn_test_app  
 > START: conn test app  
-> Initializing context: initiliazed  
+> Initializing context: initialized  
 > Openning session: opened  
 > yyyyyyyyyyyyyyyyyyyyxxxxx  
 > Invoking command: invoked  
