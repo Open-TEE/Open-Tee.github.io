@@ -4,7 +4,7 @@ title: Android Build
 permalink: /android/
 ---
 
-This page has instructions on how to build opentee for android devices
+This page has instructions on how to build opentee for android devices. Currently tested only on android 5.1+ .
 
 ## Quick Setup Guide
 
@@ -36,18 +36,7 @@ to build all the opentee modules.
 The output files will by default be located in $ANDROID_ROOT/out/target/product/generic\*/ (depending on the
 architecture).
 
-To copy those files to an android device you can use something like the following script (for arm architecture):
-
-    IN=$ANDROID_ROOT/out/target/product/generic
-    OUT=/system
-    adb push $IN/system/lib/libtee.so $OUT/lib/
-    adb push $IN/system/bin/conn_test_app $OUT/bin/
-    adb push $IN/system/lib/libCommonApi.so $OUT/lib/
-    adb push $IN/system/lib/libInternalApi.so $OUT/lib/
-    adb push $IN/system/lib/libLauncherApi.so $OUT/lib/tee
-    adb push $IN/system/lib/libManagerApi.so $OUT/lib/tee
-    adb push $IN/system/bin/opentee-engine $OUT/bin/
-    adb push $IN/system/lib/libta_conn_test_app.so $OUT/lib/ta
+To copy those files to an android device you can use the script located in Open-TEE/project/install_android.sh .
 
 Note: root access on the device is needed for this.
 
@@ -56,13 +45,7 @@ In case the files do not have an execution permission add it with something like
     chmod +x /system/bin/opentee-engine
     chmod +x /system/bin/conn_test_app
 
-Add the sample configuration given below to the configuration file in /etc/opentee.conf:
-
-    [PATHS]
-    ta_dir_path = /system/lib
-    core_lib_path = /system/lib
-    subprocess_manager = libManagerApi.so
-    subprocess_launcher = libLauncherApi.so
+Add the sample configuration from Open-TEE/project/opentee.conf.android to the /etc/opentee.conf in the device.
 
 And run opentee with
 
@@ -71,4 +54,17 @@ And run opentee with
 Verify that Open-TEE is running with `ps`:
 
     $ ps | grep tee
+
+## Troubleshooting
+
+If you get errors similar to:
+
+    D/tee_manager(32036): opentee/emulator/opentee-main/main.c:load_lib:166  Failed to load library, /system/lib/libManagerApi.so : dlopen failed: cannot locate symbol "mempcpy" referenced by "libCommonApi.so"...
+    D/tee_launcher(32037): opentee/emulator/opentee-main/main.c:load_lib:166  Failed to load library, /system/lib/libLauncherApi.so : dlopen failed: cannot locate symbol "mempcpy" referenced by "libCommonApi.so"...
+
+Then most probably the android tree that you are building with does not match the tree on the device and thus you might also have to push the generated libc.so (or other lib\*.so files) to the device. 
+
+Note: that this is unsafe and might result in your device malfunctioning. It is a good idea to take a backup of the
+/system/lib/lib\*.so files or even a complete ROM backup if you have a custom recovery.
+
 
