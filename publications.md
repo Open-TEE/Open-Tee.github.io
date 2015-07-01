@@ -9,11 +9,11 @@ permalink: /publications/
 BibTex:
 
     @techreport{McGillion15,
-      title = {{Open-TEE} -- An Open Virtual Trusted Execution Environment},
+      title = {{"{{Open-TEE"}}} -- An Open Virtual Trusted Execution Environment},
       author = {Brian McGillion and Tanel Dettenborn and Thomas Nyman and N. Asokan},
       institution = {Aalto University},
       year = {2015},
-      eprint = {{\tt arXiv:1506.07367 [cs.CR]}},
+      eprint = {{"{{\tt arXiv:1506.07367 [cs.CR]"}}}},
       url = {http://arxiv.org/abs/1506.07367}
     }
 
@@ -26,7 +26,7 @@ BibTex:
       author = {Thomas Nyman and Brian McGillion and N. Asokan},
       institution = {Aalto University},
       year = {2015},
-      eprint = {{\tt arXiv:1506.07739 [cs.CR]}},
+      eprint = {{"{{\tt arXiv:1506.07739 [cs.CR]"}}}},
       url = {http://arxiv.org/abs/1506.07739}
     }
 
