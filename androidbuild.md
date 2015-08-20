@@ -64,6 +64,13 @@ Verify that Open-TEE is running with `ps`:
 
     ps | grep tee
 
+####Importing and testing a TA via adb
+
+Modify  *Open-TEE/project/install_android.sh* to also copy your TA .so file to the */system/lib/ta/* directory and your CA
+to */system/bin/*
+Run your CA to test the TA directly via adb shell with /system/bin/<ca_name> and check logcat or gdb on android for
+debugging output.
+
 ###Android Studio
 
 This method uses an Android Studio project that packages Open-TEE inside an application and installs/runs it to the home
