@@ -78,7 +78,7 @@ directory of the app.
 
 Start by cloning the repo with
 
-    git clone https://github.com/uberspot/opentee-android
+    git clone https://github.com/Open-TEE/opentee-android
     cd opentee-android/
 
 Then import all the binaries built to the opentee_mainapp module (that packages Open-TEE) by using the
