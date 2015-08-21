@@ -17,7 +17,7 @@ BibTex:
       url = {http://arxiv.org/abs/1506.07367}
     }
 
-[TrustCom2015 slides](documents/TrustCom2015_OpenTEE.odp)
+[TrustCom2015 slides](../documents/TrustCom2015_OpenTEE.odp)
 
 [On Making Emerging Trusted Execution Environments Accessible to Developers](http://arxiv.org/abs/1506.07739)
 
