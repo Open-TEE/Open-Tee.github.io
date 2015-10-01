@@ -105,4 +105,11 @@ Then most probably the android tree that you are building with does not match th
 _Note: that this is unsafe and might result in your device malfunctioning. It is a good idea to take a backup of the
 /system/lib/lib\*.so files or even a complete ROM backup if you have a custom recovery._
 
+-------------------------
+
+If you get errors similar to 
+
+    error: unknown target 'opentee-engine'
+
+or for another Open-TEE module then consider copying the $HOME/Open-TEE directory directly under the $HOME/Open-TEE $ANDROID_ROOT/ tree instead of symlinking since that might be causing the issues.
 
