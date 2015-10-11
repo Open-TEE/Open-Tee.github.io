@@ -257,7 +257,7 @@ If the corresponding TA is not running then the Open-TEE framework will ensure t
 
 ### Using the QtCreator IDE
 
-[QtCreator Usage](//tutorial/qtcreator/)
+[QtCreator Usage](/tutorial/qtcreator/)
 
 
 
