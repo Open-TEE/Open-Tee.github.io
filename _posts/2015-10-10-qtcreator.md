@@ -29,7 +29,7 @@ Select **Build > Build project "project"** or use `Ctrl + B`
 
 Open-TEE provides numerous sample applications so you must explicitly select which one you wish to run from the `project` menu on the bottom left.
 
-![Select the project to Run](images/opentee_select_project.png)
+![Select the project to Run](http://open-tee.github.io/images/opentee_select_project.png)
 
 
 
