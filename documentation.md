@@ -20,7 +20,7 @@ permalink: /documentation/
 
 
 Overview
---------
+========
 
 The goal of the Open-TEE open source project is to implement a "virtual TEE" compliant with the recent <a href="http://globalplatform.org/specificationsdevice.asp"> Global Platform TEE specifications </a>.
 
@@ -34,9 +34,9 @@ All activities of the project are public and all results are in the public domai
 
 
 Tutorials
----------
+=========
 
-#### Quick Setup Guide
+### Quick Setup Guide
 
 
 Start by installing the PPA for the `qbs` build system and other dependencies.
@@ -130,7 +130,7 @@ You should now expect to see output similar to the following:
 > Connection test app did not found any errors.
 > ^^^ SUCCESS ^^^
 
-#### Building with QBS
+### Building with QBS
 
 For QBS installation instructions see the [Quick Setup Guide](#quick-setup-guide).
 
@@ -149,16 +149,16 @@ Finally, build Open-TEE:
 
 The result of the compilation will be found under `<profile>-debug`, e.g. executables and libraries under `gcc-debug` and trusted application objects under `gcc-debug/TAs`. 
 
-#### Autotools 
+### Autotools 
 
-##### Installing Autotools
+#### Installing Autotools
 
 The Autotools build has been tested with [Autoconfig](https://www.gnu.org/software/autoconf/autoconf.html) 2.69 and above. To perform an Autotools build you need to install `au
 toconf`, `automake` and `libtool`:
 
     $ sudo apt-get install autoconf automake libtool
 
-##### Building with Autotools
+#### Building with Autotools
 
 We recommend using a parallel build tree (a.k.a. `VPATH` build):
 
@@ -185,7 +185,7 @@ By default Open-TEE will be installed under `/opt/Open-TEE`. The directory will 
 * ``/opt/Open-TEE/lib/TAs`` - trusted application objects (_tadir_)
 
 
-#### Configure Runtime Environment
+### Configure Runtime Environment
 
 Open the configuration file with your preferred editor:
 
@@ -224,9 +224,9 @@ For an autotools build you can use
 
 
 Android
-------
+=======
 [Android Build](/android/)
 
 Misc
-------
+=======
 [User Study](/userstudy/)
