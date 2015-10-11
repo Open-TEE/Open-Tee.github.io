@@ -10,10 +10,9 @@ permalink: /documentation/
     - [QBS](#qbs)
     - [Autotools](#autotools)
     - [Configure runtime environment](#configure-runtime-environment)
-    - [Running from Command line](#running-from-the command-line)
+    - [Running from Command line](#running-from-the-command-line)
     - [Debugging with GDB](#debugging-with-gdb)
-    - [Using an IDE](#configure-an-ide)
-    - [Debugging with an IDE](#debugging-with-an-ide)
+    - [Using the QtCreator IDE](#using-the-qtcreator-ide)
 - [Android](#android)
 - [Misc](#misc)
 
@@ -45,7 +44,7 @@ Start by installing the PPA for the `qbs` build system and other dependencies.
 
     $ sudo apt-get update -y
 
-    $ sudo apt-get install autoconf automake libtool uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev build-essential git curl htop pkg-config qbs gdb
+    $ sudo apt-get install autoconf automake libtool uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev build-essential git curl htop pkg-config qbs gdb libfuse-dev
 
 
 Introduce yourself to `git`. 
@@ -158,8 +157,7 @@ The result of the compilation will be found under `<profile>-debug`, e.g. execut
 
 #### Installing Autotools
 
-The Autotools build has been tested with [Autoconfig](https://www.gnu.org/software/autoconf/autoconf.html) 2.69 and above. To perform an Autotools build you need to install `au
-toconf`, `automake` and `libtool`:
+The Autotools build has been tested with [Autoconfig](https://www.gnu.org/software/autoconf/autoconf.html) 2.69 and above. To perform an Autotools build you need to install `autoconf`, `automake` and `libtool`:
 
     $ sudo apt-get install autoconf automake libtool
 
@@ -218,7 +216,7 @@ For a `qbs` build you can use:
     subprocess_manager = libManagerApi.so
     subprocess_launcher = libLauncherApi.so
 
-where <PATHNAME> is replaced with the absolute path to the parent directory of the Open-TEE directory you created earlier. Yet again the pathname must **not** include special variables such as `~` or `$HOME`.
+Where `<PATHNAME>` is replaced with the absolute path to the parent directory of the Open-TEE directory you created earlier. Yet again the pathname must **not** include special variables such as `~` or `$HOME`.
 
 For an autotools build you can use
  
@@ -232,7 +230,7 @@ For an autotools build you can use
 
 ### Running from the command line
 
-We recomment adding the `opentee` script to your `$PATH`
+We recommend adding the `opentee` script to your `$PATH`
 
     $ cd ~/bin
     $ ln -s <PATH_OPEN_TEE_REPO>/project/opentee opentee
@@ -243,17 +241,26 @@ Now you can start, stop, restart `opentee` more freely
     $ opentee stop
     $ opentee restart
 
-If you see either of the following errors, make sure you have configured `/etc/opentee.conf` as described in [Configure runtime environment](#configure-runtime-environment), paying particular attention to where the opentee binary is being built:
+If you see either of the following errors, make sure you have configured `/etc/opentee.conf` as described in [Configure Runtime Environment](#configure-runtime-environment), paying particular attention to where the opentee binary is being built:
 
-> "No conf file exists"
-> "Could not find binary name for opentee"
+> No conf file exists
+>
+> Could not find binary name for opentee
 
 To run the sample CA binaries navigate to the build directory for your choosen make tool e.g.
 
     $ cd <PATH_TO_OPENTEE>/gcc-debug
     $ ./conn_test_app
 
-    
+If the corresponding TA is not running then the Open-TEE framework will ensure that it is loaded as part of the TEEC_OpenSession() command from the CA.
+
+
+### Using the QtCreator IDE
+
+[QtCreator Usage](//tutorial/qtcreator/)
+
+
+
 Android
 -------
 [Android Build](/android/)
