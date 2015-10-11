@@ -55,6 +55,7 @@ Add the sample configuration given below to the configuration file:
     [PATHS]
     ta_dir_path = <PATHNAME>/Open-TEE/gcc-debug/TAs
     core_lib_path = <PATHNAME>/Open-TEE/gcc-debug
+    opentee_bin = <PATHNAME>/Open-TEE/gcc-debug/opentee-engine
     subprocess_manager = libManagerApi.so
     subprocess_launcher = libLauncherApi.so
 
@@ -65,8 +66,7 @@ special variables such as `~` or `$HOME`.
 Finally, build Open-TEE and launch the `opentee-engine`:
 
     $ qbs debug
-    $ cd gcc-debug
-    ./opentee-engine
+    $ opentee start
 
 Verify that Open-TEE is running with `ps`:  
 
@@ -78,9 +78,32 @@ You should see output similar to the example below:
 > brian     5738  0.0  0.0  97176   852 ?        Sl   10:40   0:00 tee_manager  
 > brian     5739  0.0  0.0  25216  1144 ?        S    10:40   0:00 tee_launcher  
 
-Take not of the PID of the `tee_launcher` process and attach `gdb` to it:
+If you do not see the 2 tee_ processes, open syslog in another terminal to see
+any errors:
 
-    $ gdb opentee-engine <PID of tee_launcher>
+    $ tail -f /var/log/syslog
+
+In the main terminal run a client test application:
+
+    $ gcc-debug/conn_test_app
+
+You should now expect to see output similar to the following:
+
+> Open-TEE$ gcc-debug/conn_test_app  
+> START: conn test app  
+> Initializing context: initialized  
+> ...
+> END: conn test app
+>
+> !!! SUCCESS !!!
+> Connection test app did not found any errors.
+> ^^^ SUCCESS ^^^
+
+
+Attempt to attach to the `tee_launcher` process with `gdb`:
+
+    $ gdb gcc-debug/opentee-engine `pgrep tee_launcher`
+
 
 If you get the following error:
 
@@ -92,28 +115,3 @@ If you get the following error:
 Run the following command and invoke `gdb` again as above:
 
     $ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope 
-
-In the `gdb` prompt, invoke the following commands in order to set `gdb` to
-follow children processes across forks in order to drop into the TA process
-itself and resume execution: 
-
-    set follow-fork-mode child
-    c
-
-In second terminal run the client application:
-
-    $ cd Open-TEE/gcc-debug
-    $ ./conn_test_app
-
-You should now expect to see output similar to the following:
-
-> gcc-debug$ ./conn_test_app  
-> START: conn test app  
-> Initializing context: initialized  
-> Openning session: opened  
-> yyyyyyyyyyyyyyyyyyyyxxxxx  
-> Invoking command: invoked  
-> Closing session: Closed  
-> Finalizing ctx: Finalized  
-> END: conn test app
-
