@@ -4,6 +4,14 @@ title: Using the QtCreator IDE
 permalink: /tutorial/qtcreator
 ---
 
+- [Installing](#installing-qtcreator)
+- [Loading Open-TEE](#loading-the-project)
+- [Building](#building)
+- [Running and Stopping](#running-and-stopping)
+- [Debugging with QtCreator](#debugging-with-qtcreator)
+    - [Debugging CAs](#debuging-cas)
+    - [Debugging TAs](#debuging-tas)
+
 The following instructions are tried and tested using QtCreator >= version 3.3. These instruction can be modified for most other IDEs to support the same functionality.
 
 ### Installing QtCreator
@@ -15,13 +23,13 @@ Download the latest [QtCreator](http://download.qt.io/official_releases/qtcreato
 
 If you install QtCreator as root then it will be placed in `/opt/qtcreator-<version>`, so you can add this to your `$PATH` for convenience.
 
-### Loading Open-TEE with qtcreator
+### Loading the project
 
     $ cd <PATH_TO_OPENTEE_REPO>
     $ qtcreator project.qbs
 
 
-### Building Open-TEE
+### Building
 
 Select **Build > Build project "project"** or use `Ctrl + B`
 
@@ -37,9 +45,31 @@ Start with the `opentee-engine` which starts the main framework:
 
 Then press `play` to start it running
 
-Once that is running you can start any of the sample CAs in the same way
+Once that is running you can start any of the sample CAs in the same way e.g. `conn_test_app`:
+
+![Run Conn Test App](http://open-tee.github.io/images/run_conn_test_app.png)
 
 To stop opentee, kill the `tee_manager` process, select **Debug > Start Debugging > Attach to running process**. Then search for the process to kill:
 
 ![Kill tee_manager](http://open-tee.github.io/images/kill_tee_manager.png)
 
+
+### Debugging with QtCreator
+
+#### Debugging CAs
+
+When debugging CAs, start by first selecting the project to be debugged as outlined above.
+
+Then add a breakpoint to the code:
+
+![Breakpoint in conn_test_app](http://open-tee.github.io/images/conn_test_app_breakpoint.png)
+
+Then choose **Debug > Start Debugging > Start debugging** or click `F5` and the code will break allowing you to step it and inspect the state.
+
+![Stepping the Code](http://open-tee.github.io/images/stepping_the_code.png)
+
+#### Debugging TAs
+
+Start by attaching to the running TA process  **Debug > Start Debugging > Attach to running process**, the TA process name is the name of the shared library that is created during the build process e.g. `libta_conn_test_app.so`.
+
+Insert a breakpoint in the TA code and then invoke a client application to test and the breakpoint will be hit allowing the code to be inspected as with the CA.
