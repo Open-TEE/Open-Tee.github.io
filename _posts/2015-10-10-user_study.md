@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: post
 title: User Study
 permalink: /userstudy/
 ---
