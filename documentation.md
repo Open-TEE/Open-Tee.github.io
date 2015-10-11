@@ -7,10 +7,10 @@ permalink: /documentation/
 - [Overview](#overview)
 - [Tutorials](#tutorials)
     - [Quick Setup Guide](#quick-setup-guide)
-    - [Building with qbs](#building-with-qbs)
+    - [QBS](#qbs)
     - [Autotools](#autotools)
     - [Configure runtime environment](#configure-runtime-environment)
-    - [Running from Command line](#running-from-cmd-line)
+    - [Running from Command line](#running-from-the command-line)
     - [Debugging with GDB](#debugging-with-gdb)
     - [Using an IDE](#configure-an-ide)
     - [Debugging with an IDE](#debugging-with-an-ide)
@@ -20,7 +20,7 @@ permalink: /documentation/
 
 
 Overview
-========
+--------
 
 The goal of the Open-TEE open source project is to implement a "virtual TEE" compliant with the recent <a href="http://globalplatform.org/specificationsdevice.asp"> Global Platform TEE specifications </a>.
 
@@ -34,7 +34,7 @@ All activities of the project are public and all results are in the public domai
 
 
 Tutorials
-=========
+---------
 
 ### Quick Setup Guide
 
@@ -130,7 +130,9 @@ You should now expect to see output similar to the following:
 > Connection test app did not found any errors.
 > ^^^ SUCCESS ^^^
 
-### Building with QBS
+
+
+### QBS
 
 For QBS installation instructions see the [Quick Setup Guide](#quick-setup-guide).
 
@@ -149,7 +151,10 @@ Finally, build Open-TEE:
 
 The result of the compilation will be found under `<profile>-debug`, e.g. executables and libraries under `gcc-debug` and trusted application objects under `gcc-debug/TAs`. 
 
+
+
 ### Autotools 
+
 
 #### Installing Autotools
 
@@ -157,6 +162,7 @@ The Autotools build has been tested with [Autoconfig](https://www.gnu.org/softwa
 toconf`, `automake` and `libtool`:
 
     $ sudo apt-get install autoconf automake libtool
+
 
 #### Building with Autotools
 
@@ -183,6 +189,7 @@ By default Open-TEE will be installed under `/opt/Open-TEE`. The directory will 
 * `/opt/Open-TEE/lib`       - shared library objects (_libdir_)
 
 * ``/opt/Open-TEE/lib/TAs`` - trusted application objects (_tadir_)
+
 
 
 ### Configure Runtime Environment
@@ -223,10 +230,35 @@ For an autotools build you can use
     subprocess_launcher = libLauncherApi.so  
 
 
+### Running from the command line
+
+We recomment adding the `opentee` script to your `$PATH`
+
+    $ cd ~/bin
+    $ ln -s <PATH_OPEN_TEE_REPO>/project/opentee opentee
+
+Now you can start, stop, restart `opentee` more freely
+
+    $ opentee start
+    $ opentee stop
+    $ opentee restart
+
+If you see either of the following errors, make sure you have configured `/etc/opentee.conf` as described in [Configure runtime environment](#configure-runtime-environment), paying particular attention to where the opentee binary is being built:
+
+> "No conf file exists"
+> "Could not find binary name for opentee"
+
+To run the sample CA binaries navigate to the build directory for your choosen make tool e.g.
+
+    $ cd <PATH_TO_OPENTEE>/gcc-debug
+    $ ./conn_test_app
+
+    
 Android
-=======
+-------
 [Android Build](/android/)
 
+
 Misc
-=======
+----
 [User Study](/userstudy/)
