@@ -27,10 +27,19 @@ Select **Build > Build project "project"** or use `Ctrl + B`
 
 ### Running and stopping
 
+Before you can run Open-TEE from QtCreator you must first configure the `/etc/opentee.conf` file to point towards the build directory, this is generally in the parent directory to where the Open-TEE repo is cloned under `build-project-Desktop-Debug`. See [Configure Runtime Environment](/documentation/#configure-runtime-environment) for the details.
+
 Open-TEE provides numerous sample applications so you must explicitly select which one you wish to run from the `project` menu on the bottom left.
+
+Start with the `opentee-engine` which starts the main framework:
 
 ![Select the project to Run](http://open-tee.github.io/images/opentee_select_project.png)
 
+Then press `play` to start it running
 
+Once that is running you can start any of the sample CAs in the same way
 
+To stop opentee, kill the `tee_manager` process, select **Debug > Start Debugging > Attach to running process**. Then search for the process to kill:
+
+![Kill tee_manager](http://open-tee.github.io/images/kill_tee_manager.png)
 
