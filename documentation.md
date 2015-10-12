@@ -96,10 +96,10 @@ where `<PATHNAME>` with the absolute path to the parent directory of the
 Open-TEE directory you created earlier. The pathname must **not** include
 special variables such as `~` or `$HOME`.
 
-Finally, build Open-TEE and launch the `opentee-engine`:
+Finally change working directory to where you cloned the sources, build Open-TEE and launch the `opentee-engine`:
 
     $ qbs debug
-    $ opentee start
+    $ ./opentee start
 
 Verify that Open-TEE is running with `ps`:  
 
