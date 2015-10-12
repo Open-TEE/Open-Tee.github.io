@@ -8,9 +8,9 @@ permalink: /tutorial/omnishare
 
 For the purposes of this workshop we will look at enabling the key protection, encryption and decryption using a GP compliant TEE.
 
-### Running Omnishare
+## Running Omnishare
 
-#### Command line Invocation
+### Command line Invocation
 
     $ cd <PATH_TO_OPENTEE_REPO>
     $ opentee restart
@@ -23,7 +23,7 @@ The last command should produce the following error message:
 
 > Binary files /tmp/cloud_store/test_file.c and CAs/omnishare_fuse/tests/test_file.c differ
 
-#### QtCreator Invocation
+### QtCreator Invocation
 
     $ mkdir -p /tmp/{local_view,cloud_store}
 
@@ -38,13 +38,13 @@ Start the `opentee-engine` and `omnishare_fuse` projects in QtCreator, then from
     $ diff /tmp/local_view/test_file.c CAs/omnishare_fuse/tests/test_file.c
     $ diff /tmp/cloud_store/test_file.c CAs/omnishare_fuse/tests/test_file.c
 
-### Debugging Omnishare
+## Debugging Omnishare
 
-#### Using QtCreator
+### Using QtCreator
 
 Start the `opentee-engine` and `omnishare_fuse` projects as above.
 
-#### Attaching to the TA
+### Attaching to the TA
 
 **Debug > Start debugging > Attach to running process** and search for `omnishare`.
 
@@ -59,7 +59,7 @@ Then run the test cases and watch the breakpoint be triggered, allowing stepping
     $ cd <PATH_TO_OPENTEE_REPO>
     $ CAs/omnishare_fuse/omnishare copy
 
-#### Attaching to the CA
+### Attaching to the CA
 
 Same as for the TA we will choose to **Debug > Start debugging > Attach to running process** and search for `omnishare`, however, this time attach to the `omnishare_fuse` process. Remember you can only debug 1 process at a time so you must complete the TA debugging first!
 
@@ -71,4 +71,8 @@ Yet again run the tests and watch the breakpoint trigger.
 
     $ cd <PATH_TO_OPENTEE_REPO>
     $ CAs/omnishare_fuse/omnishare copy
+
+## Using GDB
+
+For GDB follow the instructions in the main [documentation](documentation/#debugging-with-gdb) section.
 

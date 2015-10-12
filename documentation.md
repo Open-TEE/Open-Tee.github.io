@@ -256,11 +256,11 @@ If the corresponding TA is not running then the Open-TEE framework will ensure t
 
 ### Debugging with GDB
 
-This is our start up guide for getting start with debugging our CA and TA applications. If you are similar with GDB debugger, for you interesting part is how attach to TA process. This guide is using our connection test application (CA: conn_test_app ; TA: ta_conn_test_app) as an example. 
+This is a quick start guide on how to debug our CA and TA applications. If you are similar with GDB debugger, the interesting part is how attach to TA process. This guide uses our connection test application (CA: conn_test_app ; TA: ta_conn_test_app) as an example. 
 
 #### Pre-setup of GDB
 
-Ptracing of non-child process by non-root user is by default disabled in Ubuntu. In other word only root can ptrace evert process and non-root can only ptrace its child process. You might bump into this problem when you are trying to attach to running process and you might get following error:
+Ptracing of non-child process by non-root user is disabled by default in Ubuntu. In other words only root can ptrace every process and non-root can only ptrace its own child process. You might bump into this problem when you are trying to attach to running process and you might get following error:
 
 
 	Could not attach to process. If your uid matches the uid of the target
@@ -269,7 +269,7 @@ Ptracing of non-child process by non-root user is by default disabled in Ubuntu.
 	see /etc/sysctl.d/10-ptrace.conf ptrace: Operation not permitted.
 
 
-You can sole error by  temporary disabling the restriction:
+You can solve error temporarily by disabling the restriction:
 
 	$ echo 0 | sudo tee /proc/sys/kernel/yama/ptrace_scope 
 
@@ -283,7 +283,7 @@ Navigate into our CA application binary folder and launch GDB with our CA name a
 
 	 $ gdb conn_test_app
 
-Set as many break point you are needing eg.:
+Set as many breakpoints as you require eg.:
 
 	$ break <OUR FUNCTION NAME>
 	$ break <SOURCE FILE NAME:LINENUMBER>
@@ -306,7 +306,7 @@ This method is working for all TAs regardless of TA type. With this debugging me
 
 	$ gdb gcc-debug/opentee-engine `pgrep tee_launcher`
 
-Set GDB to follow child, because the new TA will be child process of launcher
+Set GDB to follow child, because the new TA will be a child process of launcher
 
 	$ set follow-fork-mode child
 
@@ -324,7 +324,7 @@ Run our corresponding CA application to get our TA running.
 
 #### Debugging keep alive TA
 
-This method of debugging is only working if our TA is set to be "keep alive", which is meaning that TA is not getting destroyed, if there are no sctive  connections to that TA. This method is requering less steps and therefore it could be a bit faster (do not have to set follow fork mode). This methid is only needing our TA PID:
+This method of debugging is only working if our TA is set to be "keep alive", which means that the TA is not getting destroyed, if there are no active  connections to that TA. This method requires less steps and therefore could be a bit faster (do not have to set follow fork mode). This method only needs our TA PID:
 
 	$ gdb 'pgrep -f lib<OUR_TA_NAME>.so'
 	
@@ -333,10 +333,10 @@ This method of debugging is only working if our TA is set to be "keep alive", wh
 
 or find out our TA process PID manually and then attach GDB:
 
-	$ ps waux 
+	$ ps waux | grep lib<OUR_TA_NAME>.so
 	$ gdb attach <PID>
 
-Now you are debugging TA process. You may set a break points and when you are finnsih with break points, continue GDB execution by hitting "c"
+Now you are debugging a TA process. You may set a break point and when you are finished with the break points, continue GDB execution by hitting "c"
 
 
 
