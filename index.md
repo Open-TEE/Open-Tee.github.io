@@ -28,6 +28,6 @@ as part of our activities at the [Intel Collaborative Research Institute for Sec
 All activities of the project are public and all results are in the public
 domain. We welcome anyone interested to join us in contributing to the project.
 
-To get started, please see the [tutorial page](/tutorial/). To get involved,
+To get started, please see the [tutorial page](/documentation/). To get involved,
 please see the [contact page](/contact/) for information on how to contact us.
 
