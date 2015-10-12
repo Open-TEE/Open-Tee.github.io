@@ -35,7 +35,7 @@ All activities of the project are public and all results are in the public domai
 Tutorials
 ---------
 
-### Quick Setup Guide
+## Quick Setup Guide
 
 
 Start by installing the PPA for the `qbs` build system and other dependencies.
@@ -131,7 +131,7 @@ You should now expect to see output similar to the following:
 
 
 
-### QBS
+## QBS
 
 For QBS installation instructions see the [Quick Setup Guide](#quick-setup-guide).
 
@@ -152,17 +152,17 @@ The result of the compilation will be found under `<profile>-debug`, e.g. execut
 
 
 
-### Autotools 
+## Autotools 
 
 
-#### Installing Autotools
+### Installing Autotools
 
 The Autotools build has been tested with [Autoconfig](https://www.gnu.org/software/autoconf/autoconf.html) 2.69 and above. To perform an Autotools build you need to install `autoconf`, `automake` and `libtool`:
 
     $ sudo apt-get install autoconf automake libtool
 
 
-#### Building with Autotools
+### Building with Autotools
 
 We recommend using a parallel build tree (a.k.a. `VPATH` build):
 
@@ -190,7 +190,7 @@ By default Open-TEE will be installed under `/opt/Open-TEE`. The directory will 
 
 
 
-### Configure Runtime Environment
+## Configure Runtime Environment
 
 Open the configuration file with your preferred editor:
 
@@ -228,7 +228,7 @@ For an autotools build you can use
     subprocess_launcher = libLauncherApi.so  
 
 
-### Running from the command line
+## Running from the command line
 
 We recommend adding the `opentee` script to your `$PATH`
 
@@ -254,11 +254,11 @@ To run the sample CA binaries navigate to the build directory for your choosen m
 
 If the corresponding TA is not running then the Open-TEE framework will ensure that it is loaded as part of the TEEC_OpenSession() command from the CA.
 
-### Debugging with GDB
+## Debugging with GDB
 
 This is a quick start guide on how to debug our CA and TA applications. If you are similar with GDB debugger, the interesting part is how attach to TA process. This guide uses our connection test application (CA: conn_test_app ; TA: ta_conn_test_app) as an example. 
 
-#### Pre-setup of GDB
+### Pre-setup of GDB
 
 Ptracing of non-child process by non-root user is disabled by default in Ubuntu. In other words only root can ptrace every process and non-root can only ptrace its own child process. You might bump into this problem when you are trying to attach to running process and you might get following error:
 
@@ -277,7 +277,7 @@ or you can disable it permanently by editing /etc/sysctl.d/10-ptrace.conf
 
 	kernel.yama.ptrace_scope = 0
 
-#### Debugging CA process
+### Debugging CA process
 
 Navigate into our CA application binary folder and launch GDB with our CA name as a command line parameter:
 
@@ -294,13 +294,13 @@ Set as many breakpoints as you require eg.:
 
 Run our CA process in GDB by hitting "r"
 
-#### Debugging TA process
+### Debugging TA process
 
 Debugging TA processes are generally done in the same way as debuggin our CA processes. You will be setting eg. break points and inspecting memory locations same way as in CA process. 
 
 TA processes are managed by Open-TEE framework and one of its many responsibilities are launching new TA processes. The inner workflow of launching new TA process is that it is beginning from Open-TEE manager process, which will be noticing that new TA process is need and therefore it will be communicating to Open-TEE laucnher process. Launcher will launch new TA process by forking it self. One process stays a launcher process and another one becomes a new TA process. 
 
-#### Debugging from the beginnings
+### Debugging from the beginnings
 
 This method is working for all TAs regardless of TA type. With this debugging method you can debug TA_CreateEntryPoint and TA_OpenSessionEntryPoint functions. The setup for this method is that our TA is not yet launched by Open-TEE framework. Our TA is launched by tee_launcher -process and therefore we need attach GDB to tee_launcher process. Attach to launcher process:
 
@@ -322,7 +322,7 @@ If GDB is prompting following messaga, just select "y"
 
 Run our corresponding CA application to get our TA running.
 
-#### Debugging keep alive TA
+### Debugging keep alive TA
 
 This method of debugging is only working if our TA is set to be "keep alive", which means that the TA is not getting destroyed, if there are no active  connections to that TA. This method requires less steps and therefore could be a bit faster (do not have to set follow fork mode). This method only needs our TA PID:
 
@@ -340,7 +340,7 @@ Now you are debugging a TA process. You may set a break point and when you are f
 
 
 
-### Using the QtCreator IDE
+## Using the QtCreator IDE
 
 [QtCreator Usage](/tutorial/qtcreator/)
 
