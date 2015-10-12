@@ -63,6 +63,8 @@ Then run the test cases and watch the breakpoint be triggered, allowing stepping
 
 Same as for the TA we will choose to **Debug > Start debugging > Attach to running process** and search for `omnishare`, however, this time attach to the `omnishare_fuse` process. Remember you can only debug 1 process at a time so you must complete the TA debugging first!
 
+Add a breakpoint in libomnishare and continue the process
+
 ![Breakpoint Omnishare CA](http://open-tee.github.io/images/breakpoint_omnishare_ca.png).
 
 Yet again run the tests and watch the breakpoint trigger.
