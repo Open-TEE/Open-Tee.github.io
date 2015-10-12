@@ -83,7 +83,7 @@ Open the configuration file with your preferred editor:
 
     $ sudo $EDITOR /etc/opentee.conf
 
-Add the sample configuration given below to the configuration file:
+Add the sample configuration given below to the configuration file (IMPORTANT DO NOT REMOVE [PATHS] section header):
 
     [PATHS]
     ta_dir_path = <PATHNAME>/Open-TEE/gcc-debug/TAs
