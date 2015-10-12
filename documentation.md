@@ -353,4 +353,6 @@ Android
 
 Misc
 ----
+[Omnishare](/tutorial/omnishare/)
 [User Study](/userstudy/)
+
