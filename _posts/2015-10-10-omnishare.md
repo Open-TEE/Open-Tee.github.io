@@ -4,6 +4,15 @@ title: Omnishare
 permalink: /tutorial/omnishare
 ---
 
+- [Running Omnishare](#running-omnishare)
+    - [Command line Invocation](#command-line-invocation)
+    - [QtCreator Invocation](#qtcreator-invocation)
+- [Debugging Omnishare](#debugging-omnishare)
+    - [Using QtCreator](#using-qtcreator)
+        - [Attaching to the TA](#attaching-to-the-ta)
+	- [Attaching to the CA](#attaching-to-the-ca)
+    -[Using GDB](#using-gdb)
+
 [Omnishare](https://git.ssg.aalto.fi/close/OmniShare/tree/TEE-integration) is a scheme to allow client-side encryption with high-entropy keys for public cloud services such as dropbox and google drive. In addition it defines an intuitive key distribution menchanism enabling data access from multiple devices.
 
 For the purposes of this workshop we will look at enabling the key protection, encryption and decryption using a GP compliant TEE.
@@ -74,5 +83,5 @@ Yet again run the tests and watch the breakpoint trigger.
 
 ## Using GDB
 
-For GDB follow the instructions in the main [documentation](documentation/#debugging-with-gdb) section.
+For GDB follow the instructions in the main [documentation](/documentation/#debugging-with-gdb) section.
 
