@@ -37,12 +37,15 @@ Tutorials
 
 ## Quick Setup Guide
 
+Open-TEE requires `qbs` 1.4.2 or above. For **Ubuntu 14.04** up-to-date packages of `qbs` are available from the [qutIM PPA](https://launchpad.net/~qutim/+archive/ubuntu/qutim).
 
-Start by installing the PPA for the `qbs` build system and other dependencies.
+If requred start by installing the PPA for the `qbs` build system.
 
     $ sudo add-apt-repository ppa:qutim/qutim
 
     $ sudo apt-get update -y
+
+For **Ubuntu 15.04** and above `qbs` is available in universal repositories. So no additional steps are required:
 
     $ sudo apt-get install autoconf automake libtool uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev build-essential git curl htop pkg-config qbs gdb libfuse-dev
 
