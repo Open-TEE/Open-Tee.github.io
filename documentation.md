@@ -13,6 +13,7 @@ permalink: /documentation/
     - [Running from Command line](#running-from-the-command-line)
     - [Debugging with GDB](#debugging-with-gdb)
     - [Using the QtCreator IDE](#using-the-qtcreator-ide)
+- [Presentations](#presentations)
 - [Android](#android)
 - [Misc](#misc)
 
@@ -348,6 +349,11 @@ Now you are debugging a TA process. You may set a break point and when you are f
 [QtCreator Usage](/tutorial/qtcreator/)
 
 
+Presentations
+--------------
+[TrustCom2015 slides](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/TrustCom2015_OpenTEE.odp)
+[Open-TEE intro](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/Open-TEE-intro.pdf)
+[Oxford Workshop Feb 2016](https://github.com/Open-TEE/Open-Tee.github.io/raw/master/documents/oxford-workshop.pdf)
 
 Android
 -------
