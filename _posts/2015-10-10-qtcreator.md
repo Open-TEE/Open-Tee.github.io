@@ -11,6 +11,8 @@ permalink: /tutorial/qtcreator/
 - [Debugging with QtCreator](#debugging-with-qtcreator)
     - [Debugging CAs](#debuging-cas)
     - [Debugging TAs](#debuging-tas)
+        - [Debugging TA from Creation](#debugging-ta-from-creation)
+        - [Debugging a Running TA](#debugging-a-running-ta)
 
 The following instructions are tried and tested using QtCreator >= version 3.3. These instruction can be modified for most other IDEs to support the same functionality.
 
@@ -69,6 +71,28 @@ Then choose **Debug > Start Debugging > Start debugging** or click `F5` and the 
 ![Stepping the Code](http://open-tee.github.io/images/stepping_the_code.png)
 
 #### Debugging TAs
+
+Start by configuring GDB **Tools > Options > Debugger > GDB**, add `set follow-fork-mode child` to the `Additional Startup Commands`:
+
+![GDB Startup Commands](http://open-tee.github.io/images/startup_commands.png)
+
+Then configure the GDB Extended **Tools > Options > Debugger > GDB Extended**, make sure to uncheck the `Debug all children` option. Without this QtCreator sill not hit breakpoints correctly!!
+
+![GDB Extended Commands](http://open-tee.github.io/images/GDB_extended.png)
+
+#### Debugging TA from creation
+
+Because Open-TEE is a a daemon process that has a number of child processes it is best to run `opentee-engine` using **Build > Run** or `Ctrl+R` and only after that has started normally then attach to the `tee_launcher` process. `tee_launcher` is the process that is responsible for starting each TA process and so it is possible to use GDB to follow into the newly created TA process. **Debug > Start Debugging > Attach to Running Application** select `tee_launcher`:
+
+![Attach to tee_launcher](http://open-tee.github.io/images/attach_tee_launch.png)
+
+After attaching to the `tee_launcher` process `Continue` the debugged process using either the debugger continue button or press `F5`. Open the TA that you wish to debug e.g. `ta_conn_test_app` insert the break points as you wish. Then using either another instance of QtCreator or from the command line start the corresponding CA e.g. `conn_test_app`. When the CA starts it will then cause the break point to be hit in the TA and you can step through the code as if debugging a normal application.
+
+![Stepping the code]((http://open-tee.github.io/images/debug_ta.png)
+
+**Caveat:** We have noticed that once you stop the debugger in QtCreator, this kills the `tee_launcher` process. This means that you should stop and restart the `opentee-engine` before starting the next debugging session see [Running and Stopping](#running-and-stopping) for more details.
+
+#### Debugging a Running TA
 
 Start by attaching to the running TA process  **Debug > Start Debugging > Attach to running process**, the TA process name is the name of the shared library that is created during the build process e.g. `libta_conn_test_app.so`.
 
