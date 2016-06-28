@@ -9,8 +9,8 @@ permalink: /tutorial/qtcreator/
 - [Building](#building)
 - [Running and Stopping](#running-and-stopping)
 - [Debugging with QtCreator](#debugging-with-qtcreator)
-    - [Debugging CAs](#debuging-cas)
-    - [Debugging TAs](#debuging-tas)
+    - [Debugging CAs](#debugging-cas)
+    - [Debugging TAs](#debugging-tas)
         - [Debugging TA from Creation](#debugging-ta-from-creation)
         - [Debugging a Running TA](#debugging-a-running-ta)
 
