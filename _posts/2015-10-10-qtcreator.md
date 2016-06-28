@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Using the QtCreator IDE
-permalink: /tutorial/qtcreator
+permalink: /tutorial/qtcreator/
 ---
 
 - [Installing](#installing-qtcreator)

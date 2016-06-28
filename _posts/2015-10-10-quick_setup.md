@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Quick Setup Guide
-permalink: /tutorial/quick_setup
+permalink: /tutorial/quick_setup/
 ---
 
 Start by installing the PPA for the `qbs` build system and other dependencies.

@@ -1,7 +1,7 @@
 ---
 layout: post
 title: Omnishare
-permalink: /tutorial/omnishare
+permalink: /tutorial/omnishare/
 ---
 
 - [Running Omnishare](#running-omnishare)
