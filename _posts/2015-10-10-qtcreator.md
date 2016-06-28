@@ -88,7 +88,7 @@ Because Open-TEE is a a daemon process that has a number of child processes it i
 
 After attaching to the `tee_launcher` process `Continue` the debugged process using either the debugger continue button or press `F5`. Open the TA that you wish to debug e.g. `ta_conn_test_app` insert the break points as you wish. Then using either another instance of QtCreator or from the command line start the corresponding CA e.g. `conn_test_app`. When the CA starts it will then cause the break point to be hit in the TA and you can step through the code as if debugging a normal application.
 
-![Stepping the code]((http://open-tee.github.io/images/debug_ta.png)
+![Stepping the code](http://open-tee.github.io/images/debug_ta.png)
 
 **Caveat:** We have noticed that once you stop the debugger in QtCreator, this kills the `tee_launcher` process. This means that you should stop and restart the `opentee-engine` before starting the next debugging session see [Running and Stopping](#running-and-stopping) for more details.
 
