@@ -76,7 +76,7 @@ Start by configuring GDB **Tools > Options > Debugger > GDB**, add `set follow-f
 
 ![GDB Startup Commands](http://open-tee.github.io/images/startup_commands.png)
 
-Then configure the GDB Extended **Tools > Options > Debugger > GDB Extended**, make sure to uncheck the `Debug all children` option. Without this QtCreator sill not hit breakpoints correctly!!
+Then configure the GDB Extended **Tools > Options > Debugger > GDB Extended**, make sure to uncheck the `Debug all children` option. Without this change QtCreator will not hit breakpoints correctly!!
 
 ![GDB Extended Commands](http://open-tee.github.io/images/GDB_extended.png)
 
