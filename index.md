@@ -22,7 +22,7 @@ developers and researchers right away.
 We intend Trusted Applications developed using our virtual TEE can be compiled
 and run for any target that complies with the specifications.
 
-The Open-TEE project is being led by the [Secure Systems group](http://se-sy.org)
+The Open-TEE project is being led by the [Secure Systems group](https://ssg.aalto.fi)
 as part of our activities at the [Intel Collaborative Research Institute for Secure Computing](http://www.icri-sc.org)
 
 All activities of the project are public and all results are in the public
