@@ -48,8 +48,15 @@ If requred start by installing the PPA for the `qbs` build system.
 
 For **Ubuntu 15.04** and above `qbs` is available in universal repositories. So no additional steps are required:
 
-    $ sudo apt-get install autoconf automake libtool uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev build-essential git curl htop pkg-config qbs gdb libfuse-dev
+    $ sudo apt-get install autoconf automake libtool uuid-dev libssl-dev libglu1-mesa-dev libelfg0-dev mesa-common-dev build-essential git curl python htop pkg-config qbs gdb libfuse-dev
 
+For **Ubuntu 16.04** install the following dependencies:
+
+    $ sudo apt-get install autoconf automake libtool uuid-dev libssl-dev libglu1-mesa-dev libelf-dev mesa-common-dev build-essential git curl python htop pkg-config qbs gdb libfuse-dev
+
+For **Ubuntu 18.04** install the following dependencies:
+
+    $ sudo apt-get install autoconf automake libtool uuid-dev libssl1.0-dev libglu1-mesa-dev libelf-dev mesa-common-dev build-essential git curl python htop pkg-config qbs gdb libfuse-dev
 
 Introduce yourself to `git`. 
 
